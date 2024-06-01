@@ -11,6 +11,8 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedWork, setSelectedWork] = useState(null);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -36,12 +38,22 @@ const Work = () => {
     }, 500);
   };
 
+  const handleReadMoreClick = (work) => {
+    setSelectedWork(work);
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedWork(null);
+  };
+
   return (
     <>
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
 
       <div className="app__work-filter">
-        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+        {['Thermal Energy Storage','Power Consumption','ZnO Nanoneedles', 'Biomedical', 'Modern Agricultural Technology', 'Nanotech', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -58,10 +70,8 @@ const Work = () => {
         className="app__work-portfolio"
       >
         {filterWork.map((work, index) => (
-          <div className="app__work-item app__flex" key={index}>
-            <div
-              className="app__work-img app__flex"
-            >
+          <div className="app__work-item app__flex" key={work._id}>
+            <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} />
 
               <motion.div
@@ -70,7 +80,6 @@ const Work = () => {
                 className="app__work-hover app__flex"
               >
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
-
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.90] }}
@@ -100,10 +109,37 @@ const Work = () => {
               <div className="app__work-tag app__flex">
                 <p className="p-text">{work.tags[0]}</p>
               </div>
+
+              <div className="app__work-readmore">
+                <button onClick={() => handleReadMoreClick(work)} className="read-more-button">Read More</button>
+              </div>
             </div>
           </div>
         ))}
       </motion.div>
+
+      {isPopupOpen && selectedWork && (
+  <div className="popup">
+    <div className="popup-inner">
+      <button className="close-button" onClick={handleClosePopup}>X</button>
+      <h2>{selectedWork.titlepopup}</h2>
+      <img src={urlFor(selectedWork.imgUrl)} alt={selectedWork.name} />
+      <p>{selectedWork.descriptionpopup}</p>
+      <div className="publication-details">
+        <p><strong>Author:</strong> {selectedWork.author}</p>
+        <p><strong>Publisher:</strong> {selectedWork.publisher}</p>
+        <p><strong>Publication Date:</strong> {selectedWork.publicationdate}</p>
+      </div>
+      <a href={selectedWork.downloadlink} target="_blank" rel="noreferrer" className="download-button">Download</a>
+      <div className="app__work-tag app__flex">
+        {selectedWork.tags.map((tag, index) => (
+          <p key={index} className="p-text">{tag}</p>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
     </>
   );
 };

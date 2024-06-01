@@ -8,10 +8,38 @@ export default {
         title: 'Title',
         type: 'string',
       },
+
+      {
+        name: 'titlepopup',
+        title: 'TitlePopUp',
+        type: 'string',
+      },
+      {
+        name: 'author',
+        title: 'Author',
+        type: 'string',
+      },
     
       {
         name: 'description',
         title: 'Description',
+        type: 'string',
+      },
+
+      {
+        name: 'descriptionpopup',
+        title: 'DescriptionPopUp',
+        type: 'string',
+      },
+      {
+        name: 'publisher',
+        title: 'publisher',
+        type: 'string',
+      },
+
+      {
+        name: 'publicationdate',
+        title: 'publicationdate',
         type: 'string',
       },
       {
@@ -22,6 +50,12 @@ export default {
       {
         name: 'codeLink',
         title: 'Code Link',
+        type: 'string',
+      },
+
+      {
+        name: 'downloadlink',
+        title: 'Download Link',
         type: 'string',
       },
       {
