@@ -28,17 +28,24 @@ const Testimonial = () => {
     });
   }, []);
 
+  const currentTestimonial = testimonials[currentIndex] || {};
+
   return (
     <>
-      {testimonials.length && (
+      {testimonials.length > 0 && (
         <>
+           <h2 className="head-text">Testimonial</h2>
           <div className="app__testimonial-item app__flex">
-          <img src={urlFor(testimonials[currentIndex].imageurl)} alt={testimonials[currentIndex].name} />
+            {currentTestimonial.imageurl ? (
+              <img src={urlFor(currentTestimonial.imageurl).url()} alt={currentTestimonial.name} />
+            ) : (
+              <img src="default-image-url.jpg" alt="default" /> // Provide a default image URL here
+            )}
             <div className="app__testimonial-content">
-              <p className="p-text">{testimonials[currentIndex].feedback}</p>
+              <p className="p-text">{currentTestimonial.feedback}</p>
               <div>
-                <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
-                <h5 className="p-text">{testimonials[currentIndex].company}</h5>
+                <h4 className="bold-text">{currentTestimonial.name}</h4>
+                <h5 className="p-text">{currentTestimonial.company}</h5>
               </div>
             </div>
           </div>
@@ -62,7 +69,12 @@ const Testimonial = () => {
             transition={{ duration: 0.5, type: 'tween' }}
             key={brand._id}
           >
-            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+            {brand.ImgUrl ? (
+              // <img src={urlFor(brand.imgUrl).url()} alt={brand.name} />
+              <img src={urlFor(testimonials[currentIndex].imageurl)} alt={testimonials[currentIndex].name} />
+            ) : (
+              <img src="default-brand-image-url.jpg" alt="default brand" /> // Provide a default brand image URL here
+            )}
           </motion.div>
         ))}
       </div>
