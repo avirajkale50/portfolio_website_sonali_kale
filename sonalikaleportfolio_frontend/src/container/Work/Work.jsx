@@ -50,7 +50,7 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
+      <h2 className="head-text">My <span>Research </span> Works</h2>
 
       <div className="app__work-filter">
         {['Thermal Energy Storage','Power Consumption','ZnO Nanoneedles', 'Biomedical', 'Modern Agricultural Technology', 'Nanotech', 'All'].map((item, index) => (
@@ -124,12 +124,12 @@ const Work = () => {
       <button className="close-button" onClick={handleClosePopup}>X</button>
       <h2>{selectedWork.titlepopup}</h2>
       <img src={urlFor(selectedWork.imgUrl)} alt={selectedWork.name} />
-      <p>{selectedWork.descriptionpopup}</p>
       <div className="publication-details">
         <p><strong>Author:</strong> {selectedWork.author}</p>
         <p><strong>Publisher:</strong> {selectedWork.publisher}</p>
         <p><strong>Publication Date:</strong> {selectedWork.publicationdate}</p>
       </div>
+      <p>{selectedWork.descriptionpopup}</p>
       <a href={selectedWork.downloadlink} target="_blank" rel="noreferrer" className="download-button">Download</a>
       <div className="app__work-tag app__flex">
         {selectedWork.tags.map((tag, index) => (

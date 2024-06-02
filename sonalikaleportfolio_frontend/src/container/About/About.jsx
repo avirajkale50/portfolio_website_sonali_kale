@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-import { AppWrap, MotionWrap } from '../../wrapper';
+// import { AppWrap, MotionWrap } from '../../wrapper';
 import './About.scss';
 import { urlFor, client } from '../../client';
 
@@ -18,6 +18,7 @@ const About = () => {
   
   return (
     <>
+    <div className='about__style'>
       <h2 className="head-text"> Empowering Minds: <span>My Journey as </span> <br />a <span>Teacher and Researcher</span></h2>
 
       <div className="app__profiles">
@@ -35,12 +36,14 @@ const About = () => {
           </motion.div>
         ))}
       </div>
+    </div>
+    <div className="sticky__back">
+      <p>
+        <i>"The only way to do great work is to love what you do."</i> 
+      </p>        
+      </div>
     </>
   );
 };
 
-export default AppWrap(
-  MotionWrap(About, 'app__about'),
-  'about',
-  'app__whitebg',
-);
+export default About;

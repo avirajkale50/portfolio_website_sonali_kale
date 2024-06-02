@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.scss';
 import {motion} from 'framer-motion';
 import {images} from '../../constants';
-import TypingEffect from '../../components/TypingEffect';
+// import TypingEffect from '../../components/TypingEffect';
 
 const Header = () => {
   return (
@@ -12,9 +12,8 @@ const Header = () => {
         transition={{duration:0.5}}
         className="app__header-info"
       >
-        <div className="app__header-badge">
+
           <div className="badge-cmp app__flex">
-            <span>⚛️</span>
             <div style={{marginLeft:20}}>
               <p className="p-text">
                 Hello,I am
@@ -22,18 +21,19 @@ const Header = () => {
               <h1 className="head-text">
                 Sonali Kale
               </h1>
-              <TypingEffect text='Hiiiiiii' speed={100} />
+              {/* <TypingEffect text="Hii" speed={400} /> */}
             </div>
           </div>
-          <div className="tag-cmp app__flex">
+
+          {/* <div className="tag-cmp app__flex">
               <p className="p-text">
                Professor
               </p>
               <p className="p-text">
                 Research
               </p>
-          </div>
-        </div>
+          </div> */}
+   
 
       </motion.div>
         
@@ -43,10 +43,10 @@ const Header = () => {
        className="app__header-img"
       >
         <img src={images.profile} alt="profile-img" />
-        <motion.img
+        <motion.div
            whileInView={{scale:[0,1]}}
            transition={{duration:1,ease:'easeInOut'}}
-           src={images.circle}
+          //  src={images.circle}
            alt="profile_circle"
            className="overlay_circle"
         />
