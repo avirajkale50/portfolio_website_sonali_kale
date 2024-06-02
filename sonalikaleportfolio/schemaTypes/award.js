@@ -11,7 +11,7 @@ export default {
       {
         name: 'date',
         title: 'Date',
-        type: 'datetime'
+        type: 'string'
       },
       {
         name: 'image',

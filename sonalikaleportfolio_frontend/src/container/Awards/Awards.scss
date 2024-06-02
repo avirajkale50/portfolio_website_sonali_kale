@@ -10,7 +10,7 @@
 
   .head{
     font-size: 2.75rem;
-    font-weight: 800;
+    font-weight: 900;
     text-align: center;
     color: var(--black-color);
     text-transform: capitalize;
@@ -23,9 +23,9 @@
   
 
   .container {
-    width: 75%;
+    width: 50%;
     height: 100%;
-    margin-top: 30%;
+    margin-top: 15%;
     position: relative;
 
     ul {
@@ -35,7 +35,7 @@
         content: " ";
         position: absolute;
         width: 2px;
-        height: 60%;
+        height: 92%;
         left: 50%;
         top: 0;
         transform: translateX(-50%);
@@ -88,7 +88,7 @@
 
         .date {
           position: absolute;
-          width: 190px;
+          width: 210px;
           height: 40px;
           background-image: linear-gradient(to right, #9b45f1, #e100ff);
           border-radius: 15px;
@@ -126,9 +126,10 @@
         p {
           font-size: 18px;
           color: #666;
-          line-height: 18px;
-          margin: 10px 0 10px 0;
+          line-height: 1.8em; /* or 27px (18px * 1.5) */
+          margin: 10px 0;
         }
+        
         
         a {
           font-size: 18px;

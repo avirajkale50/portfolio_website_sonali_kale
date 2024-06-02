@@ -28,11 +28,10 @@ const Awards = () => {
               <img
                 src={urlFor(award.image)}
                 alt={award.title}
-                style={{ width: "100%", height: "300px" }} // Adjust size here
+                style={{ width: "85%", height: "30%" ,margin:"5%"}} // Adjust size here
               />
               <p>{award.description}</p>
-              <a href="#">Read More </a>
-              <span className="date">{new Date(award.date).toLocaleDateString()}</span>
+              <span className="date">{award.date}</span>
               <span className="circle"></span>
             </li>
           ))}
