@@ -13,6 +13,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedWork, setSelectedWork] = useState(null);
+  const [visibleWorksCount, setVisibleWorksCount] = useState(6);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -48,12 +49,16 @@ const Work = () => {
     setSelectedWork(null);
   };
 
+  const handleShowMore = () => {
+    setVisibleWorksCount(visibleWorksCount + 6); // Increment the number of visible works by 6
+  };
+
   return (
     <>
       <h2 className="head-text">My <span>Research </span> Works</h2>
 
       <div className="app__work-filter">
-        {['Thermal Energy Storage','Power Consumption','ZnO Nanoneedles', 'Biomedical', 'Modern Agricultural Technology', 'Nanotech', 'All'].map((item, index) => (
+        {['Thermal Energy Storage', 'Power Consumption', 'ZnO Nanoneedles', 'Biomedical', 'Modern Agricultural Technology', 'Nanotech', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -69,7 +74,7 @@ const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
       >
-        {filterWork.map((work, index) => (
+        {filterWork.slice(0, visibleWorksCount).map((work, index) => (
           <div className="app__work-item app__flex" key={work._id}>
             <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} />
@@ -118,32 +123,39 @@ const Work = () => {
         ))}
       </motion.div>
 
-      {isPopupOpen && selectedWork && (
-  <div className="popup">
-    <div className="popup-inner">
-      <button className="close-button" onClick={handleClosePopup}>X</button>
-      <h2>{selectedWork.titlepopup}</h2>
-      <img src={urlFor(selectedWork.imgUrl)} alt={selectedWork.name} />
-      <div className="publication-details">
-        <p><strong>Author:</strong> {selectedWork.author}</p>
-        <p><strong>Publisher:</strong> {selectedWork.publisher}</p>
-        <p><strong>Publication Date:</strong> {selectedWork.publicationdate}</p>
-      </div>
-      <p>{selectedWork.descriptionpopup}</p>
-      <a href={selectedWork.downloadlink} target="_blank" rel="noreferrer" className="download-button">Download</a>
-      <div className="app__work-tag app__flex">
-        {selectedWork.tags.map((tag, index) => (
-          <p key={index} className="p-text">{tag}</p>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
+      {visibleWorksCount < filterWork.length && (
+        <div className="app__work-showmore">
+  <button onClick={handleShowMore} className="show-more-button">Show More</button>
+</div>
 
-        <div className="copyright">
-          <p className="p-text">@2024 Sonali Kale</p>
-          <p className="p-text">All rights reserved</p>
+      )}
+
+      {isPopupOpen && selectedWork && (
+        <div className="popup">
+          <div className="popup-inner">
+            <button className="close-button" onClick={handleClosePopup}>X</button>
+            <h2>{selectedWork.titlepopup}</h2>
+            <img src={urlFor(selectedWork.imgUrl)} alt={selectedWork.name} />
+            <div className="publication-details">
+              <p><strong>Author:</strong> {selectedWork.author}</p>
+              <p><strong>Publisher:</strong> {selectedWork.publisher}</p>
+              <p><strong>Publication Date:</strong> {selectedWork.publicationdate}</p>
+            </div>
+            <p>{selectedWork.descriptionpopup}</p>
+            <a href={selectedWork.downloadlink} target="_blank" rel="noreferrer" className="download-button">Download</a>
+            <div className="app__work-tag app__flex">
+              {selectedWork.tags.map((tag, index) => (
+                <p key={index} className="p-text">{tag}</p>
+              ))}
+            </div>
+          </div>
         </div>
+      )}
+
+      <div className="copyright">
+        <p className="p-text">@2024 Sonali Kale</p>
+        <p className="p-text">All rights reserved</p>
+      </div>
     </>
   );
 };
