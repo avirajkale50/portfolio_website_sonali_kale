@@ -140,6 +140,10 @@ const Work = () => {
   </div>
 )}
 
+        <div className="copyright">
+          <p className="p-text">@2024 Sonali Kale</p>
+          <p className="p-text">All rights reserved</p>
+        </div>
     </>
   );
 };
