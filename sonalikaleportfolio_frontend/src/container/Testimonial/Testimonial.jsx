@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Testimonial.scss';
+import {images} from '../../constants';
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,7 +40,7 @@ const Testimonial = () => {
             {currentTestimonial.imageurl ? (
               <img src={urlFor(currentTestimonial.imageurl).url()} alt={currentTestimonial.name} />
             ) : (
-              <img src="default-image-url.jpg" alt="default" /> // Provide a default image URL here
+              <img src={images.user} alt="default" /> // Provide a default image URL here
             )}
             <div className="app__testimonial-content">
               <p className="p-text">{currentTestimonial.feedback}</p>

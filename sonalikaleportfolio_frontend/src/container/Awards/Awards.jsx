@@ -16,7 +16,7 @@ const Awards = () => {
   }, []);
 
   return (
-    <div className="main">
+    <div className="main" id='award'>
       <h2 className="head">
         My <span>Awards </span> And <span>Achievements</span>
       </h2>

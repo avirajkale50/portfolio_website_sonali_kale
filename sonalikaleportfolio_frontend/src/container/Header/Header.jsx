@@ -2,58 +2,76 @@ import React from 'react'
 import './Header.scss';
 import {motion} from 'framer-motion';
 import {images} from '../../constants';
-// import TypingEffect from '../../components/TypingEffect';
+// // import TypingEffect from '../../components/TypingEffect';
 
 const Header = () => {
   return (
-    <div id="home" className="app__header app__flex">
-      <motion.div
-        whileInView={{ x : [-100,0],opacity:[0,1]}}
-        transition={{duration:0.5}}
-        className="app__header-info"
-      >
+    <>
+    <div id="home" className="app__header">
+            {/* left name side */}
+            <div className="i-left">
+        <div className="i-name">
+          {/* yahan change hy darkmode ka */}
+          <span>Hy! I Am</span>
+          <span>Sonali kale</span>
+          <span>
+            Frontend Developer with high level of experience in web designing
+            and development, producting the Quality work
+          </span>
+        </div>
+      </div>
+      {/* right image side */}
+      <div className="i-right">
+        <img src={images.circle} alt="" />
+        <img src={images.circle} alt="" />
+        <img src={images.circle} alt="" />
+        {/* animation */}
+        {/* <motion.img
+          initial={{ left: "-36%" }}
+          whileInView={{ left: "-24%" }}
+          transition={transition}
+          src={glassesimoji}
+          alt=""
+        /> */}
 
-          <div className="badge-cmp app__flex">
-            <div style={{marginLeft:20}}>
-              <p className="p-text">
-                Hello,I am
-              </p>
-              <h1 className="head-text">
-                Sonali Kale
-              </h1>
-              {/* <TypingEffect text="Hii" speed={400} /> */}
-            </div>
-          </div>
+        {/* <motion.div
+          initial={{ top: "-4%", left: "74%" }}
+          whileInView={{ left: "68%" }}
+          transition={transition}
+          className="floating-div"
+        >
+          <FloatinDiv img={images.circle} text1="Web" text2="Developer" />
+        </motion.div> */}
 
-          {/* <div className="tag-cmp app__flex">
-              <p className="p-text">
-               Professor
-              </p>
-              <p className="p-text">
-                Research
-              </p>
-          </div> */}
-   
+        {/* animation */}
+        {/* <motion.div
+          initial={{ left: "9rem", top: "18rem" }}
+          whileInView={{ left: "0rem" }}
+          transition={transition}
+          className="floating-div"
+        > */}
+          {/* floatinDiv mein change hy dark mode ka */}
+          {/* <FloatinDiv img={images.circle} text1="Best Design" text2="Award" />
+        </motion.div> */}
 
-      </motion.div>
-        
-      <motion.div
-       whileInView={{opacity:[0,1]}}
-       transition={{duration:0.5,delayChildren:0.5}}
-       className="app__header-img"
-      >
-        <img src={images.profile} alt="profile-img" />
-        <motion.div
-           whileInView={{scale:[0,1]}}
-           transition={{duration:1,ease:'easeInOut'}}
-          //  src={images.circle}
-           alt="profile_circle"
-           className="overlay_circle"
-        />
-      </motion.div>
+        <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
+        <div
+          className="blur"
+          style={{
+            background: "#C1F5FF",
+            top: "17rem",
+            width: "21rem",
+            height: "11rem",
+            left: "-9rem",
+          }}
+        ></div>
+      </div>
+    </div>
+
 
   
-    </div>
+    {/* </div> */}
+    </>
   )
 }
 
