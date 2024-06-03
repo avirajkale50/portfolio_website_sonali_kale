@@ -8,69 +8,30 @@ const Header = () => {
   return (
     <>
     <div id="home" className="app__header">
+      <div className="hero">
             {/* left name side */}
             <div className="i-left">
         <div className="i-name">
           {/* yahan change hy darkmode ka */}
-          <span>Hy! I Am</span>
-          <span>Sonali kale</span>
+          <span>Hi I Am</span>
+          <span>Sonali Kale</span>
           <span>
-            Frontend Developer with high level of experience in web designing
-            and development, producting the Quality work
+          An expert in nanotechnology and sustainable engineering. My work includes pioneering research in nano-enhanced phase change materials and advanced energy-efficient systems. I hold multiple patents and have received several awards for my contributions to the field. Committed to education and collaboration, I actively shape curricula and foster research partnerships.
+          </span>
+          <span>
+          Innovating Tomorrow with Nanotechnology and Sustainable Solutions
           </span>
         </div>
       </div>
       {/* right image side */}
       <div className="i-right">
-        <img src={images.circle} alt="" />
-        <img src={images.circle} alt="" />
-        <img src={images.circle} alt="" />
-        {/* animation */}
-        {/* <motion.img
-          initial={{ left: "-36%" }}
-          whileInView={{ left: "-24%" }}
-          transition={transition}
-          src={glassesimoji}
-          alt=""
-        /> */}
-
-        {/* <motion.div
-          initial={{ top: "-4%", left: "74%" }}
-          whileInView={{ left: "68%" }}
-          transition={transition}
-          className="floating-div"
-        >
-          <FloatinDiv img={images.circle} text1="Web" text2="Developer" />
-        </motion.div> */}
-
-        {/* animation */}
-        {/* <motion.div
-          initial={{ left: "9rem", top: "18rem" }}
-          whileInView={{ left: "0rem" }}
-          transition={transition}
-          className="floating-div"
-        > */}
-          {/* floatinDiv mein change hy dark mode ka */}
-          {/* <FloatinDiv img={images.circle} text1="Best Design" text2="Award" />
-        </motion.div> */}
-
-        <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
-        <div
-          className="blur"
-          style={{
-            background: "#C1F5FF",
-            top: "17rem",
-            width: "21rem",
-            height: "11rem",
-            left: "-9rem",
-          }}
-        ></div>
+        <img src={images.back2} alt="" />
+        <img src={images.back1} alt="" />
+        <img src={images.profile} alt="" />
+       
       </div>
     </div>
-
-
-  
-    {/* </div> */}
+    </div>
     </>
   )
 }
