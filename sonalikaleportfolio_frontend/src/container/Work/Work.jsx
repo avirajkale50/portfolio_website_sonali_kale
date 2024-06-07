@@ -55,8 +55,7 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text">My <span>Research </span> Works</h2>
-
+      <h2 className="head-text">The Characterization<span>and </span> Applications of Nanomaterials</h2>
       <div className="app__work-filter">
         {['Thermal Energy Storage', 'Power Consumption', 'ZnO Nanoneedles', 'Biomedical', 'Modern Agricultural Technology', 'Nanotech', 'All'].map((item, index) => (
           <div
