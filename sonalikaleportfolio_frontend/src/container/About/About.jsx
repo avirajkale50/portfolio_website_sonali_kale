@@ -21,13 +21,13 @@ const About = () => {
     <div className='about__style'>
       <h2 className="head-text"> Empowering Minds: <span>My Journey as </span> <br />a <span>Teacher and Researcher</span></h2>
 
-      <div className="app__profiles">
+      <div className="app__about-profiles">
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: 'tween' }}
-            className="app__profile-item"
+            className="app__about-profile-item"
             key={about.title + index}
           >
             <img src={urlFor(about.imgUrl)} alt={about.title} />
@@ -37,11 +37,11 @@ const About = () => {
         ))}
       </div>
     </div>
-    <div className="sticky__back">
+    <div className="sticky__about-back">
       <p>
         <i>"The only way to do great work is to love what you do."</i> 
       </p>        
-      </div>
+    </div>
     </>
   );
 };
