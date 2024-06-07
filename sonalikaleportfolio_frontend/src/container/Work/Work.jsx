@@ -75,7 +75,10 @@ const Work = () => {
         className="app__work-portfolio"
       >
         {filterWork.slice(0, visibleWorksCount).map((work, index) => (
-          <div className="app__work-item app__flex" key={work._id}>
+          <motion.div className="app__work-item app__flex" key={work._id}
+          whileInView={{ opacity: 1 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration:0.1}}>
             <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} />
 
@@ -119,7 +122,7 @@ const Work = () => {
                 <button onClick={() => handleReadMoreClick(work)} className="read-more-button">Read More</button>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
 

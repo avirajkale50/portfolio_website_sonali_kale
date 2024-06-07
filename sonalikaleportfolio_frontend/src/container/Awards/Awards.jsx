@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Awards.scss";
+import { motion } from 'framer-motion';
 
 const Awards = () => {
   const [awards, setAwards] = useState([]);
@@ -20,7 +21,8 @@ const Awards = () => {
       <h2 className="head">
         My <span>Awards </span> And <span>Achievements</span>
       </h2>
-      <div className="container">
+      <div className="container"
+                >
         <ul>
           {awards.map((award, index) => (
             <li key={index}>
