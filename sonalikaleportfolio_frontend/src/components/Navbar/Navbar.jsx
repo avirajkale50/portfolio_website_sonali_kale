@@ -14,10 +14,14 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
-        {['home', 'about', 'work','award','projects', 'skills', 'contact'].map((item) => (
+        {['home', 'about', 'work', 'projects', 'contact', 'EduMaterials'].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
             <div />
-            <a href={`#${item}`}>{item}</a>
+            {item === 'EduMaterials' ? (
+              <a href="https://drive.google.com/drive/folders/1afVqWyTNF_w_jMR-SbUchVLAovDVl2St?usp=sharing" target="_blank" rel="noopener noreferrer">{item}</a>
+            ) : (
+              <a href={`#${item}`}>{item}</a>
+            )}
           </li>
         ))}
       </ul>
@@ -32,11 +36,17 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {['home', 'about', 'work','award','projects','skills', 'contact'].map((item) => (
+              {['home', 'about', 'work', 'award', 'projects', 'contact', 'EduMaterials'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
-                  </a>
+                  {item === 'EduMaterials' ? (
+                    <a href="https://drive.google.com/drive/folders/1afVqWyTNF_w_jMR-SbUchVLAovDVl2St?usp=sharing" target="_blank" rel="noopener noreferrer" onClick={() => setToggle(false)}>
+                      {item}
+                    </a>
+                  ) : (
+                    <a href={`#${item}`} onClick={() => setToggle(false)}>
+                      {item}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
