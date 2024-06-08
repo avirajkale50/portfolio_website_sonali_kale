@@ -1,12 +1,12 @@
 #home {
     width: 100%;
-
     position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-    padding-top: 40px;
+    padding-top: 20x;
     overflow-x: hidden;
+    overflow-y: hidden;
     // disable the default padding styles
     .app__wrapper {
       padding: 0;
@@ -19,7 +19,7 @@
 
   .hero{
     display: flex;
-    height: 100vh;
+    height: 96vh;
   }
   
   /* left side styling */
@@ -45,7 +45,7 @@
 .i-name > :nth-child(2) {
   color:rgb(9, 58, 255);
   font-weight: bold;
-  font-size: 8rem;
+  font-size: 7rem;
   text-shadow: #ff5e00 1.5px 1.5px 1px;
 }
 .i-name > :nth-child(3) {
@@ -80,7 +80,7 @@
 }
 .i-right > :nth-child(4) {
   transform: scale(0.62);
-  top: -19%;
+  // top: -19%;
   left: -24%;
   border-radius: 50%;
   padding: 0;
@@ -96,19 +96,20 @@
   }
 
   .i-right {
-    transform: scale(0.8);
-    left: -10rem;
+    transform: scale(0.5);
+    left: -120px;
+    top:-30px;
   }
   .i-right .blur {
     display: none;
   }
-  .floating-div:nth-of-type(1){
-    /* display: none; */
-    top: -7rem !important;;
-  }
+  // .floating-div:nth-of-type(1){
+  //   /* display: none; */
+  //   top: -7rem !important;;
+  // }
   .i-name > :nth-child(2) {
-    font-size: 7rem;
-    line-height: 6rem;
+    font-size: 5rem;
+    line-height: 5rem;
   }
   .i-name > :nth-child(3) {
     display: none;

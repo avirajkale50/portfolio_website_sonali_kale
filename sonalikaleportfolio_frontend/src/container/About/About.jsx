@@ -37,11 +37,11 @@ const About = () => {
         ))}
       </div>
     </div>
-    <div className="sticky__about-back">
+    {/* <div className="sticky__about-back">
       <p>
         <i>"The only way to do great work is to love what you do."</i> 
       </p>        
-    </div>
+    </div> */}
     </>
   );
 };
