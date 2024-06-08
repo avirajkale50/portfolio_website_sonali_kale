@@ -16,8 +16,10 @@ const CopyrightFooter = () => {
           className="footer__links"
         >
           <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
+          <a href="/contact#projects">Projects</a>
+          <a href="/contact#work">Reaserch</a>
+          <a href="https://drive.google.com/drive/folders/1afVqWyTNF_w_jMR-SbUchVLAovDVl2St">Education Material</a>
+          <a href="/contact#contact">Contact</a>
         </motion.div>
         <motion.div
           whileInView={{ scale: [0, 1] }}
