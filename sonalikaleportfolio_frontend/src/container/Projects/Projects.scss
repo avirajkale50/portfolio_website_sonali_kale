@@ -4,42 +4,8 @@
     flex-direction: column;
   }
   
-  .app__project-filter {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  
-    margin: 4rem 0 2rem;
-  
-    .app__project-filter-item {
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      background-color: #fff;
-      color: #000;
-      font-weight: 800;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin: 0.5rem;
 
   
-      &:hover {
-        background-color: var(--secondary-color);
-        color: #fff;
-      }
-  
-      @media screen and (min-width: 2000px) {
-        padding: 1rem 2rem;
-        border-radius: 0.85rem;
-      }
-    }
-  
-    .item-active {
-      background-color: var(--secondary-color);
-      color: #fff;
-    }
-  }
   
   .app__project-portfolio {
     display: flex;
@@ -48,16 +14,15 @@
     align-items: flex-start; /* Align items at the start */
   
     .app__project-item {
-        width: calc(33.333% - 2rem); /* Ensure 3 cards per row */
-        margin: 1rem; /* Adjust margin to fit */
-        height: 25rem;
+        width: 350px; /* Ensure 3 cards per row */
+        margin-top: 30px; /* Adjust margin to fit */
+        height: 500px;
         padding: 2rem;
         border-radius: 0.5rem;
         background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
         color: #000;
         flex-direction: column;
         border: 0.5px solid #341bf3; /* Dashed border with 1px thickness */
-        box-shadow: 0 0 5px #8478db, 0 0 10px rgba(167, 158, 231, 0.5); /* Blur effect around the border */
         cursor: pointer;
         transition: all 0.3s ease;
       

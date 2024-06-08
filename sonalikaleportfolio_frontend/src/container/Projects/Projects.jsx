@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -79,10 +78,6 @@ const Projects = () => {
             <motion.div className="app__project-content app__flex">
 
               <p className="p-text" style={{ marginTop: 10 }}>{project.description}</p>
-
-              <div className="app__project-tag app__flex">
-                <p className="p-text">{project.tags[0]}</p>
-              </div>
 
               <div className="app__project-readmore">
                 <button onClick={() => handleReadMoreClick(project)} className="read-more-button">Read More</button>
