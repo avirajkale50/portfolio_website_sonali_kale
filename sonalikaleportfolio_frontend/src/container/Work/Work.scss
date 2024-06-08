@@ -174,24 +174,25 @@
       background:#48a0ff;
     }
   }
-}
-
-
+  
 .show-more-button{
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  // border-radius: 0.5rem;
   background: transparent;
   color: #48a0ff;
   text-align: center;
-  text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid #48a0ff;
+  text-decoration: underline;
+  // border: 2px solid #48a0ff;
 
   &:hover {
     color: #fff;
     background:#48a0ff;
   }
 }
+
+}
+
 
 
 

@@ -126,7 +126,7 @@ const Work = () => {
       </motion.div>
 
       {visibleWorksCount < filterWork.length && (
-        <div className="app__work-showmore">
+      <div className="app__work-showmore">
   <button onClick={handleShowMore} className="show-more-button">Show More</button>
 </div>
 
