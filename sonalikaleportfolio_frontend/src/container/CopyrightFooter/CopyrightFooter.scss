@@ -1,14 +1,13 @@
-// CopyrightFooter.scss
 .footer {
-  background-color: #fff;
-  color: #333;
+  background: linear-gradient(90deg, #6d5fb3, #3a29a5);
+  color: #ffffff;
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 
   &__content {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     width: 90%;
     margin: 0 auto;
@@ -19,27 +18,37 @@
     margin: 10px 0;
   }
 
-  &__links a
-  { color: #333;
+  &__links a {
+    color: #ffffff;
     margin: 0 10px;
+    margin-bottom: 10px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 20px;
     display: flex;
     line-height: 20px;
-  }
-  &__social a {
-    color: #333;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 14px;
 
     &:hover {
       text-decoration: underline;
+      text-decoration-color: rgb(255, 106, 0);
+      text-decoration-thickness: 5px; // Adds blue underline on hover
     }
   }
 
   &__social a {
-    font-size: 20px;
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 2rem; // Adjust the size as needed
+    margin-right: 10px; // Adds space between the icons
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: blue; // Adds blue underline on hover
+    }
+
+    &:last-child {
+      margin-right: 0; // Removes margin from the last icon
+    }
   }
 
   &__map {
@@ -64,6 +73,21 @@
   .footer__links,
   .footer__social {
     margin: 0;
+  }
+
+  .footer__links a {
+    margin: 10px;
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+
+  .footer__social a {
+    font-size: 3rem; // Adjust the size as needed
+    margin-right: 10px; // Adds space between the icons
+  }
+
+  .footer__social a:last-child {
+    margin-right: 0; // Removes margin from the last icon
   }
 
   .footer__map {
