@@ -8,6 +8,7 @@ import skills from "./skills"
 import contact from "./contact"
 import award from "./award"
 import projects from "./projects"
+import count from "./count"
 
 export const schemaTypes = [
     testimonials,
@@ -19,5 +20,6 @@ export const schemaTypes = [
     skills,
     contact,
     award,
-    projects
+    projects,
+    count
 ]

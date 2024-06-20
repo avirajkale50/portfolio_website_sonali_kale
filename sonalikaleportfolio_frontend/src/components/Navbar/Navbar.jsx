@@ -8,6 +8,17 @@ import './Navbar.scss';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
+  const handleMenuOpen = (e) => {
+    e.preventDefault();
+    console.log('Opening menu');
+    setToggle(true);
+  };
+
+  const handleMenuClose = () => {
+    console.log('Closing menu');
+    setToggle(false);
+  };
+
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
@@ -27,23 +38,23 @@ const Navbar = () => {
       </ul>
 
       <div className="app__navbar-menu">
-        <HiMenuAlt4 onClick={() => setToggle(true)} />
+        <HiMenuAlt4 onClick={handleMenuOpen} />
 
         {toggle && (
           <motion.div
-            whileInView={{ x: [300, 0] }}
+            // whileInView={{ x: [300, 0] }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
           >
-            <HiX onClick={() => setToggle(false)} />
+            <HiX onClick={handleMenuClose} />
             <ul>
               {['home', 'about', 'work', 'award', 'projects', 'contact', 'EduMaterials'].map((item) => (
                 <li key={item}>
                   {item === 'EduMaterials' ? (
-                    <a href="https://drive.google.com/drive/folders/1afVqWyTNF_w_jMR-SbUchVLAovDVl2St?usp=sharing" target="_blank" rel="noopener noreferrer" onClick={() => setToggle(false)}>
+                    <a href="https://drive.google.com/drive/folders/1afVqWyTNF_w_jMR-SbUchVLAovDVl2St?usp=sharing" target="_blank" rel="noopener noreferrer" onClick={handleMenuClose}>
                       {item}
                     </a>
                   ) : (
-                    <a href={`#${item}`} onClick={() => setToggle(false)}>
+                    <a href={`#${item}`} onClick={handleMenuClose}>
                       {item}
                     </a>
                   )}

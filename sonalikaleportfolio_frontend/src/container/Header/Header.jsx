@@ -3,6 +3,9 @@ import './Header.scss';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { images } from '../../constants';
+// import Typewriter from 'typewriter-effect';
+
+
 
 const revealVariants = {
   hidden: { opacity: 0, clipPath: 'inset(0 50% 0 50%)' },
@@ -57,7 +60,9 @@ const Header = () => {
               variants={revealVariants}
               transition={{ delay: 0.4 }}
             >
-              An expert in nanotechnology and sustainable engineering. My work includes pioneering research in nano-enhanced phase change materials and advanced energy-efficient systems. I hold multiple patents and have received several awards for my contributions to the field. Committed to education and collaboration, I actively shape curricula and foster research partnerships.
+               <p id="intro">
+                I am a <span style={{ letterSpacing: '2px', color: 'blue' }}>physics professor</span> specializing in nanotechnology and sustainable engineering. My <span style={{ letterSpacing: '2px', color: 'green' }}>research</span> focuses on nano-enhanced phase change materials and advanced energy-efficient systems, for which I hold multiple patents and have received prestigious awards. Dedicated to <span style={{ letterSpacing: '2px', color: 'red' }}>education</span>, I shape curricula and cultivate research partnerships to advance the field.
+             </p>
             </motion.span>
             <motion.span
               initial="hidden"
